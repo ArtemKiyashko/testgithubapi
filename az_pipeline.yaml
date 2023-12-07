@@ -1,0 +1,45 @@
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: 'ch-robinson-internal/DevOps.Azure.Pipeline.Library'
+      endpoint: 'ch-robinson-internal'
+      ref: 'refs/heads/master'
+    - repository: rating
+      type: github
+      name: 'ch-robinson-internal/Rating.SharedDeploy'
+      endpoint: 'ch-robinson-internal'
+      ref: 'refs/heads/master'      
+
+parameters:
+  - name: deployEnvironments
+    type: object
+    default:
+    - groupNumber: 2
+      name: dev
+      cluster: 10
+    - groupNumber: 2
+      name: int
+      cluster: 10
+    - groupNumber: 2
+      name: trn
+      cluster: 10
+    - groupNumber: 2
+      name: prd
+      cluster: 10
+
+variables:
+- template: rating-shared-iis-api-variables.yml@rating  
+  parameters:
+    appName: 'AuxiliaryAuditor'
+
+name: $(Major).$(Minor).$(Build).$(Revision)
+
+trigger:
+  - development
+  - master
+
+extends:
+  template: rating-shared-iis-api-pipeline.yml@rating  
+  parameters:
+    deployEnvironments: ${{ parameters.deployEnvironments }}
