@@ -1,0 +1,138 @@
+{
+    "WebApi": {
+        "ProductTechnology": "DotnetFramework",
+        "ErrorCount": {
+            "default": {
+                "TargetResources": [],
+                "AnomalyThresholds": {
+                    "WindowMinutes": 60,
+                    "Alert": {
+                        "Direction": "Above",
+                        "Enabled": true,
+                        "Sensitivity": "Medium"
+                    },
+                    "Warn": {
+                        "Enabled": false
+                    }
+                },
+                "StaticThresholds": {
+                    "Alert": null,
+                    "Warn": null
+                },
+                "Notification": {
+                    "Incident": {
+                        "AssignmentGroup": "Navisphere Rating and Quoting",
+                        "CreateIncident": true,
+                        "Priority": 3
+                    },
+                    "TeamsChannels": [
+                        {
+                            "TeamName": "Rating",
+                            "ChannelName": "ProdNotifications",
+                            "SendOnAlert": true,
+                            "SendOnWarning": true
+                        }
+                    ],
+                    "EmailAddresses": [
+                        {
+                            "Address": "ratingteam@chrobinson.com",
+                            "SendOnAlert": true,
+                            "SendOnWarning": true
+                        }
+                    ]
+                }
+            }
+        },
+        "ErrorPercentage": {
+            "default": {
+                "TargetResources": [],
+                "AnomalyThresholds": {
+                    "WindowMinutes": 60,
+                    "Alert": {
+                        "Direction": "Above",
+                        "Enabled": true,
+                        "Sensitivity": "Medium"
+                    },
+                    "Warn": {
+                        "Enabled": false
+                    }
+                },
+                "StaticThresholds": {
+                    "Alert": null,
+                    "Warn": null
+                },
+                "Notification": {
+                    "Incident": {
+                        "AssignmentGroup": "Navisphere Rating and Quoting",
+                        "CreateIncident": true,
+                        "Priority": 3
+                    },
+                    "TeamsChannels": [
+                        {
+                            "TeamName": "Rating",
+                            "ChannelName": "ProdNotifications",
+                            "SendOnAlert": true,
+                            "SendOnWarning": true
+                        }
+                    ],
+                    "EmailAddresses": [
+                        {
+                            "Address": "ratingteam@chrobinson.com",
+                            "SendOnAlert": true,
+                            "SendOnWarning": true
+                        }
+                    ]
+                }
+            }
+        },
+        "Latency": {
+            "default": {
+                "TargetResources": [],
+                "ExcludeResources": [
+                    "get_/",
+                    "get_/healthcheck"
+                ],
+                "AnomalyThresholds": {
+                    "WindowMinutes": 10080,
+                    "Alert": {
+                        "Direction": "Above",
+                        "Enabled": true,
+                        "CutoffMin": 0.2,
+                        "CutoffMinEnabled": true,
+                        "Sensitivity": "Medium"
+                    },
+                    "Warn": {
+                        "Enabled": false
+                    }
+                },
+                "StaticThresholds": {
+                    "Alert": null,
+                    "Warn": null
+                },
+                "Notification": {
+                    "Incident": {
+                        "AssignmentGroup": "Navisphere Rating and Quoting",
+                        "CreateIncident": true,
+                        "Priority": 3
+                    },
+                    "TeamsChannels": [
+                        {
+                            "TeamName": "Rating",
+                            "ChannelName": "ProdNotifications",
+                            "SendOnAlert": true,
+                            "SendOnWarning": true
+                        }
+                    ],
+                    "EmailAddresses": [
+                        {
+                            "Address": "ratingteam@chrobinson.com",
+                            "SendOnAlert": true,
+                            "SendOnWarning": true
+                        }
+                    ]
+                }
+            }
+        },
+        "Throughput": {}
+    }
+}
